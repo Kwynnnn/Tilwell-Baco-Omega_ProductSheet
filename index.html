@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Chosen Palette: Calm Neutral Blue -->
+    <!-- Application Structure Plan: A thematic, story-driven SPA structure was designed to guide the user from a high-level product promise to deep-dive scientific evidence. The flow is: 1) Hero section for initial engagement, 2) Hybrid Capsule for delivery innovation, 3) 5 Core Pillars for key benefits, 4) Synergistic effects to explain the formula's completeness, 5) Interactive deep-dives into Bacomind™ (with data visualizations), 6) Interactive deep-dives into plant-based DHA (with data visualizations), 7) Other Ingredients for foundational understanding, 8) A new infographic section for target audience, 9) An interactive FAQ for user concerns, and 10) A clear footer for usage and disclaimers. This structure prioritizes user understanding and exploration over a rigid report format, making complex information digestible and engaging. -->
+    <!-- Visualization & Content Choices: 1) Bacomind™ ADHD Study: Goal: Compare. Viz: Horizontal Bar Chart (Chart.js) to clearly show percentage percentage improvements across different symptoms. Justification: Visually impactful and easy to compare values. 2) DHA Brain Composition: Goal: Inform (Proportion). Viz: Donut Chart (Chart.js) to represent the >90% proportion of DHA. Justification: Instantly communicates a simple but powerful powerful statistic. 3) Ingredient Synergy: Goal: Organize (Process). Viz: HTML/CSS Flexbox Diagram to illustrate how ingredients work together. Justification: Avoids prohibited SVG/Mermaid while clearly showing relationships. 4) FAQ: Goal: Organize/Inform. Viz: Interactive Accordion (JS). Justification: Keeps the layout clean and user-focused. 5) Target Audience Infographic: Goal: Inform. Viz: HTML/CSS Grid with Unicode Icons. Justification: Provides a quick, visual summary of who the product is for, without using prohibited SVG. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <title>Tilwell Baco Omega+ | ข้อมูลผลิตภัณฑ์เชิงลึก</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #f8fafc;
+            color: #1f2937;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            /* Adjusted height for better symmetry and to prevent text from falling off */
+            height: 280px; /* Further reduced height slightly for better symmetry */
+            max-height: 330px; /* Adjusted max height */
+            padding-bottom: 10px; /* Reduced padding as height is also reduced */
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .faq-item .faq-answer {
+            display: none;
+            transition: all 0.3s ease-in-out;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+        .unicode-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 py-8 md:py-12">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Tilwell Baco Omega+</h1>
+            <p class="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">คู่มือข้อมูลเชิงลึก: ปลดล็อกศักยภาพสมองด้วยวิทยาศาสตร์</p>
+            <p class="mt-4 text-slate-500 max-w-4xl mx-auto">แต่ละแคปซูลบรรจุน้ำมันสาหร่าย 325 มก. และเมื่อรับประทาน 2 แคปซูลต่อวัน จะได้รับ DHA จากน้ำมันสาหร่ายรวม 650 มก. ข้อมูลด้านล่างนี้จะพาคุณสำรวจข้อมูลเชิงลึกของ Tilwell Baco Omega+ ตั้งแต่ส่วนประกอบที่คัดสรรมาอย่างดีเยี่ยม ไปจนถึงหลักฐานทางวิทยาศาสตร์ที่สนับสนุนประสิทธิภาพในการบำรุงและส่งเสริมการทำงานของสมองในทุกมิติ</p>
+        </header>
+
+        <section id="hybrid-capsule" class="mb-16 bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">นวัตกรรม Hybrid Capsule: การส่งมอบสารอาหารอย่างแม่นยำ เพื่อการดูดซึมที่ดีที่สุด</h2>
+            <p class="text-center text-slate-600 max-w-3xl mx-auto mb-8">Tilwell Baco Omega+ มาพร้อมนวัตกรรม Hybrid Capsule ที่ออกแบบมาเพื่อปกป้องและส่งมอบสารอาหารสำคัญอย่างมีประสิทธิภาพสูงสุด แคปซูลอัจฉริยะนี้แยกสารอาหารที่อาจทำปฏิกิริยากันออกจากกัน และช่วยให้สารสำคัญคงคุณภาพจนถึงจุดที่เหมาะสมสำหรับการดูดซึม:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Outer Capsule (แคปซูลชั้นนอก)</h3>
+                    <div class="unicode-icon text-blue-500 mb-4">💧</div>
+                    <p class="text-slate-700">บรรจุน้ำมันสาหร่าย (DHA) 325 มก. (ของเหลว)</p>
+                </div>
+                <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                    <h3 class="text-xl font-semibold text-green-700 mb-2">Inner Capsule (แคปซูลชั้นใน)</h3>
+                    <div class="unicode-icon text-green-500 mb-4">✨</div>
+                    <p class="text-slate-700">บรรจุสารสกัดสำคัญ 7 ชนิด (รูปแบบผง)</p>
+                </div>
+            </div>
+            <p class="text-center text-sm text-slate-500 mt-6">แคปซูลชั้นนอกที่เป็นน้ำมันจะช่วยหล่อเลี้ยงและปกป้องสารสกัดสำคัญในแคปซูลชั้นใน ให้สามารถผ่านกรดในกระเพาะอาหารได้อย่างมีประสิทธิภาพ และนำส่งสารอาหารไปยังลำไส้เล็กเพื่อการดูดซึมที่ดีที่สุด</p>
+        </section>
+
+        <section id="overview" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">5 หัวใจสำคัญสู่สมองที่เฉียบคม</h2>
+            <div class="flex flex-wrap justify-center gap-8"> <!-- Changed from grid to flex and added justify-center -->
+                <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.33rem)] xl:w-[calc(33.33%-1.33rem)] bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-blue-600 mb-4">🧠</div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Bacomind™</h3>
+                    <p class="text-slate-600 text-sm mb-2">100 มก./แคปซูล</p>
+                    <p class="text-slate-600 text-sm">สารสกัดพรมมิที่จดสิทธิบัตร ช่วยสนับสนุนความจำและการเรียนรู้</p>
+                </div>
+                <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.33rem)] xl:w-[calc(33.33%-1.33rem)] bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-green-600 mb-4">🌿</div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">DHA from Algae Oil</h3>
+                    <p class="text-slate-600 text-sm mb-2">325 มก./แคปซูล</p>
+                    <p class="text-slate-600 text-sm">โอเมก้า-3 จากพืช 100% เพื่อบำรุงโครงสร้างเซลล์สมอง</p>
+                </div>
+                <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.33rem)] xl:w-[calc(33.33%-1.33rem)] bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-amber-600 mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">L-Tyrosine</h3>
+                    <p class="text-slate-600 text-sm mb-2">15 มก./แคปซูล</p>
+                    <p class="text-slate-600 text-sm">กรดอะมิโนจำเป็น ช่วยเรื่องสมาธิภายใต้ความกดดัน</p>
+                </div>
+                <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.33rem)] xl:w-[calc(33.33%-1.33rem)] bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-sky-600 mb-4">☕</div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Green Tea Extract</h3>
+                    <p class="text-slate-600 text-sm mb-2">14.6 มก./แคปซูล</p>
+                    <p class="text-slate-600 text-sm">คาเฟอีนธรรมชาติ 98% ช่วยเพิ่มความสดชื่นและกระตุ้นความตื่นตัว</p>
+                </div>
+                <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.33rem)] xl:w-[calc(33.33%-1.33rem)] bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-purple-600 mb-4">🌟</div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">B-Complex</h3>
+                    <p class="text-slate-600 text-sm mb-2">(B3 2.6 มก., B5 2.6 มก., B6 0.1 มก., B12 0.1 มก.)/แคปซูล</p>
+                    <p class="text-slate-600 text-sm">วิตามินบีรวม 4 ชนิด จำเป็นต่อระบบประสาทและพลังงานสมอง</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="formula" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">สูตรที่ลงตัวเพื่อการทำงานร่วมกัน</h2>
+            <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200">
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="border-b-2 md:border-b-0 md:border-r-2 border-slate-200 p-4">
+                        <h3 class="text-xl font-semibold text-amber-700">เพิ่มสมาธิ ลดสมองตื้อ</h3>
+                        <p class="mt-2 text-slate-600"><strong>L-Tyrosine</strong> และ <strong>สารสกัดจากชาเขียว</strong> ช่วยสนับสนุนการสร้างสารสื่อประสาทและเพิ่มความตื่นตัว ทำให้จดจ่อได้ดีขึ้นแม้ในสภาวะกดดัน</p>
+                    </div>
+                    <div class="border-b-2 md:border-b-0 md:border-r-2 border-slate-200 p-4">
+                        <h3 class="text-xl font-semibold text-blue-700">เสริมความจำและการเรียนรู้</h3>
+                        <p class="mt-2 text-slate-600"><strong>Bacomind™</strong> มีงานวิจัยสนับสนุนว่าช่วยเพิ่มความสามารถในการเรียนรู้และจดจำ ทั้งในระยะสั้นและระยะยาว</p>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-green-700">บำรุงเซลล์สมองระยะยาว</h3>
+                        <p class="mt-2 text-slate-600"><strong>DHA</strong> เป็นองค์ประกอบสำคัญของโครงสร้างเซลล์สมอง ทำงานร่วมกับ <strong>วิตามินบีรวม</strong> เพื่อสนับสนุนสุขภาพระบบประสาทโดยรวม</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bacomind-deepdive" class="mb-16 bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-blue-800">เจาะลึก Bacomind™: นวัตกรรมที่พิสูจน์ได้</h2>
+                <p class="mt-2 text-slate-600 max-w-3xl mx-auto">Bacomind™ คือสารสกัดพรมมิเกรดพรีเมียมที่ใช้นวัตกรรมการสกัด Soft Extraction process ซึ่งได้รับสิทธิบัตรจากออสเตรเลีย ทำให้ได้สารสำคัญประสิทธิภาพสูงถึง 9 ชนิด ประสิทธิภาพของ Bacomind™ ได้รับการยืนยันจากงานวิจัยทางคลินิกหลายฉบับ</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="chart-container">
+                    <canvas id="adhdChart"></canvas>
+                </div>
+                <div class="prose max-w-none text-slate-700">
+                    <h4 class="font-semibold text-lg text-slate-800">ผลลัพธ์จากงานวิจัยในเด็กที่มีภาวะสมาธิสั้น (ADHD)</h4>
+                    <p>กราฟนี้แสดงผลจากการศึกษาแบบเปิดในเด็ก 27 คน (อายุ 6-12 ปี) ที่ได้รับ Bacomind™ 225 มก./วัน เป็นเวลา 6 เดือน พบว่าช่วยลดอาการต่างๆ ของ ADHD ได้อย่างมีนัยสำคัญ:</p>
+                    <ul>
+                        <li><strong class="text-blue-700">93%</strong> ของเด็กมีอาการกระสับกระส่ายลดลง</li>
+                        <li><strong class="text-blue-700">89%</strong> มีการควบคุมตนเองที่ดีขึ้น</li>
+                        <li><strong class="text-blue-700">85%</strong> มีสมาธิดีขึ้น</li>
+                    </ul>
+                    <p class="text-sm text-slate-500 mt-4">อ้างอิง: Dave et al., 2014. แม้การศึกษานี้ทำในเด็ก แต่ก็ชี้ให้เห็นถึงศักยภาพของ Bacomind™ ในการสนับสนุนการทำงานของสมองด้านสมาธิและการจดจ่อ ซึ่งเป็นประโยชน์อย่างยิ่งสำหรับวัยทำงานอายุ 25-45 ปี ที่ต้องเผชิญกับความท้าทายด้านการคิด การเรียนรู้ และความเครียดในชีวิตประจำวัน</p>
+                    <h4 class="font-semibold text-lg text-slate-800 mt-6">งานวิจัยในกลุ่มผู้ใหญ่และผู้สูงอายุ</h4>
+                    <p>Bacomind™ ยังมีงานวิจัยที่ศึกษาในกลุ่มผู้ใหญ่และผู้สูงอายุ ซึ่งแสดงให้เห็นถึงประโยชน์ต่อความจำและการรับรู้:</p>
+                    <ul>
+                        <li><strong class="text-blue-700">ในผู้สูงอายุสุขภาพดี (Morgan & Stevens, 2010):</strong> การศึกษาในผู้เข้าร่วมอายุ 55 ปีขึ้นไป พบว่า Bacomind™ 300 มก./วัน ช่วยปรับปรุงการเรียนรู้คำศัพท์และการเรียกคืนความจำได้อย่างมีนัยสำคัญ</li>
+                        <li><strong class="text-blue-700">ในผู้สูงอายุที่มีภาวะความจำเสื่อมตามวัย (Barbhaiya et al., 2008):</strong> การศึกษาในผู้ที่มีอายุ 50-75 ปี พบว่า Bacomind™ 450 มก./วัน ปรับปรุงประสิทธิภาพในการทดสอบที่เกี่ยวข้องกับความสนใจและความจำคำศัพท์</li>
+                    </ul>
+                    <p class="text-sm text-slate-500 mt-4">แม้ปริมาณ Bacomind™ ที่ได้รับจาก Tilwell Baco Omega+ (200 มก. ต่อวัน เมื่อรับประทาน 2 แคปซูล) จะแตกต่างจากบางงานวิจัย แต่ผลลัพธ์เหล่านี้ยืนยันถึงศักยภาพของสารสกัดพรมมิในการสนับสนุนฟังก์ชันการรับรู้ที่สำคัญในหลายช่วงวัย</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dha-deepdive" class="mb-16 bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                 <div class="prose max-w-none text-slate-700">
+                    <h2 class="text-3xl font-bold text-green-800">ทำไมต้อง DHA จากน้ำมันสาหร่าย?</h2>
+                    <p class="mb-4">DHA (Docosahexaenoic Acid) คือกรดไขมันโอเมก้า-3 ที่สำคัญต่อสมองอย่างยิ่ง เป็นองค์ประกอบหลักกว่า 90% ของโอเมก้า-3 ในสมองมนุษย์ และมีความเข้มข้นสูงในเนื้อสมองส่วนสีเทา</p>
+                    <p class="mb-4">DHA มีบทบาทสำคัญในการบำรุงโครงสร้างเซลล์สมองและเยื่อหุ้มเซลล์ประสาท ซึ่งจำเป็นต่อการส่งสัญญาณประสาทที่มีประสิทธิภาพ การได้รับ DHA เพียงพอจึงช่วยส่งเสริมการเรียนรู้ การจดจ่อ และการรักษาประสิทธิภาพการรับรู้ในระยะยาว</p>
+                    <p class="mb-4">Tilwell Baco Omega+ เลือกใช้ DHA จากน้ำมันสาหร่าย (*Schizochytrium sp.*) ซึ่งมาจากพืช 100% เป็นทางเลือกที่ปลอดภัยสำหรับผู้ทานมังสวิรัติ วีแกน และผู้แพ้อาหารทะเล นอกจากนี้ DHA จากสาหร่ายยังมีความเสี่ยงต่ำต่อการปนเปื้อนสารมลพิษในสิ่งแวดล้อมอีกด้วย</p>
+                    <ul class="list-none p-0">
+                        <li class="flex items-center mb-2"><span class="unicode-icon text-green-600 mr-3">🌿</span><span>มาจากพืช 100% ปลอดภัย ยั่งยืน</span></li>
+                        <li class="flex items-center"><span class="unicode-icon text-red-600 mr-3">🚫</span><span>ปราศจากความเสี่ยงสารก่อภูมิแพ้จากทะเล</span></li>
+                    </ul>
+                </div>
+                <div class="chart-container h-72 md:h-80 max-h-[350px]">
+                    <h4 class="font-semibold text-lg text-center text-slate-800 mb-2">สัดส่วนของ DHA ในสมอง</h4>
+                    <canvas id="dhaDonutChart"></canvas>
+                    <p class="text-center text-sm text-slate-500 mt-4">DHA คิดเป็นสัดส่วนมากกว่า 90% ของกรดไขมันโอเมก้า-3 ทั้งหมดที่พบในสมอง ซึ่งจำเป็นต่อการบำรุงเซลล์ประสาท</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="other-ingredients" class="mb-16 bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">ส่วนประกอบสำคัญอื่นๆ เพื่อการทำงานของสมองที่สมบูรณ์</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-4 text-center">
+                    <div class="unicode-icon text-amber-600 mb-4">💡</div>
+                    <h3 class="text-xl font-semibold text-amber-700 mb-2">L-Tyrosine (15 มก./แคปซูล)</h3>
+                    <p class="text-slate-600">กรดอะมิโนที่เป็นสารตั้งต้นของสารสื่อประสาทสำคัญ ช่วยเพิ่มสมาธิ ความตื่นตัว และช่วยให้สมองรับมือกับความเครียดได้ดีขึ้น ทำให้คุณสามารถจดจ่อกับงานได้นานขึ้นและลดอาการสมองล้า</p>
+                </div>
+                <div class="p-4 text-center">
+                    <div class="unicode-icon text-sky-600 mb-4">☕</div>
+                    <h3 class="text-xl font-semibold text-sky-700 mb-2">สารสกัดจากชาเขียว (INNOVA TEA) (14.6 มก./แคปซูล)</h3>
+                    <p class="text-slate-600">อุดมด้วยคาเฟอีนธรรมชาติ 98% และสารต้านอนุมูลอิสระ ช่วยเพิ่มความสดชื่น กระตุ้นความตื่นตัว และอาจมีส่วนช่วยในการทำงานของสมองและหน่วยความจำ</p>
+                </div>
+                <div class="p-4 text-center">
+                    <div class="unicode-icon text-purple-600 mb-4">🌟</div>
+                    <h3 class="text-xl font-semibold text-purple-700 mb-2">วิตามินบีรวม (B3, B5, B6, B12)</h3>
+                    <p class="text-slate-600">กลุ่มวิตามินที่จำเป็นต่อกระบวนการเมแทบอลิซึมของพลังงานในสมองและการทำงานของระบบประสาท ช่วยบำรุงระบบประสาทให้แข็งแรงและสนับสนุนสุขภาพสมองโดยรวม</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="who-is-it-for" class="mb-16 bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Tilwell Baco Omega+ เหมาะกับใคร?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-blue-600 mb-3">📚</div>
+                    <p class="font-semibold text-slate-700">นักเรียน นักศึกษา</p>
+                    <p class="text-sm text-slate-500">ที่ต้องการเพิ่มสมาธิและการเรียนรู้</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-amber-600 mb-3">💻</div>
+                    <p class="font-semibold text-slate-700">วัยทำงานที่ใช้ความคิดหนัก</p>
+                    <p class="text-sm text-slate-500">เพื่อลดอาการสมองตื้อและเพิ่มโฟกัส</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-red-600 mb-3">😴</div>
+                    <p class="font-semibold text-slate-700">ผู้ที่รู้สึกสมองอ่อนล้า ไม่สดใส</p>
+                    <p class="text-sm text-slate-500">ต้องการความสดชื่นและกระตือรือร้น</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-green-600 mb-3">🎯</div>
+                    <p class="font-semibold text-slate-700">ผู้ที่ต้องการเพิ่มสมาธิและจดจ่อ</p>
+                    <p class="text-sm text-slate-500">ให้ทำงานหรือเรียนได้อย่างมีประสิทธิภาพ</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-purple-600 mb-3">🧠</div>
+                    <p class="font-semibold text-slate-700">ผู้ที่ต้องการบำรุงเซลล์สมองระยะยาว</p>
+                    <p class="text-sm text-slate-500">เพื่อสุขภาพสมองที่ดีในอนาคต</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 text-center">
+                    <div class="unicode-icon text-teal-600 mb-3">🌱</div>
+                    <p class="font-semibold text-slate-700">ผู้ที่ทานมังสวิรัติ/วีแกน หรือแพ้อาหารทะเล</p>
+                    <p class="text-sm text-slate-500">ด้วยส่วนประกอบจากพืช 100%</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="mb-16 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">คำถามที่พบบ่อย</h2>
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Tilwell Baco Omega+ คืออะไร และช่วยเรื่องอะไรบ้าง?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>Tilwell Baco Omega+ เป็นผลิตภัณฑ์เสริมอาหารที่ออกแบบมาเพื่อบำรุงและสนับสนุนการทำงานของสมอง ด้วยส่วนประกอบสำคัญที่เน้นการทำงานร่วมกันเพื่อช่วยให้สมองทำงานได้ดีขึ้น ลดอาการสมองตื้อ เพิ่มสมาธิ และบำรุงเซลล์สมองในระยะยาว</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">ส่วนประกอบสำคัญใน Tilwell Baco Omega+ มีอะไรบ้าง และมาจากแหล่งใด?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>ผลิตภัณฑ์มีส่วนประกอบสำคัญหลายชนิด เช่น น้ำมันสาหร่าย (DHA), สารสกัดจากพรมมิ (Bacomind™), แอล-ไทโรซีน, สารสกัดจากชาเขียว และวิตามินบีรวมต่างๆ ส่วนใหญ่เป็นสารสกัดจากพืชหรือผลิตจากกระบวนการที่ไม่ใช้ส่วนประกอบจากสัตว์ ทำให้เหมาะสำหรับผู้ที่แพ้อาหารทะเลหรือผู้ที่ทานมังสวิรัติ/วีแกน</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Tilwell Baco Omega+ มีปริมาณสารสำคัญต่อแคปซูลเท่าไหร่ และควรรับประทานอย่างไร?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>แต่ละแคปซูลมีน้ำมันสาหร่าย 325 มก., สารสกัดจากพรมมิ (Bacomind™) 100 มก., แอล-ไทโรซีน 15 มก., สารสกัดจากชาเขียว 14.6 มก. และวิตามินบีรวมต่างๆ แนะนำให้รับประทานวันละ 2 แคปซูล หลังตื่นนอน หรือ 30 นาทีก่อนมื้ออาหาร</p>
+                        <p class="mt-2 text-sm text-slate-700"><strong>เหตุผลที่แนะนำให้รับประทานตอนท้องว่าง:</strong> การรับประทานผลิตภัณฑ์หลังตื่นนอนหรือ 30 นาทีก่อนมื้ออาหาร (ตอนท้องว่าง) จะช่วยให้ร่างกายดูดซึมสารอาหารสำคัญได้อย่างมีประสิทธิภาพสูงสุด โดยเฉพาะอย่างยิ่ง แอล-ไทโรซีน ซึ่งเป็นกรดอะมิโนที่อาจมีการแข่งขันในการดูดซึมกับกรดอะมิโนอื่นๆ จากอาหาร หากรับประทานพร้อมมื้ออาหาร การรับประทานตอนท้องว่างยังช่วยให้สารสกัดจากพรมมิและวิตามินบีรวมสามารถออกฤทธิ์ได้อย่างรวดเร็วและเต็มที่ นอกจากนี้ นวัตกรรม Hybrid Capsule ยังช่วยปกป้องน้ำมันสาหร่าย (DHA) จากการเสื่อมสภาพ ทำให้มั่นใจได้ว่าสารอาหารจะคงคุณภาพสูงสุดจนกว่าจะถูกดูดซึมเข้าสู่ร่างกาย</p>
+                    </div>
+                </div>
+                 <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Bacomind™ ในผลิตภัณฑ์มีจุดเด่นอย่างไร และมีงานวิจัยรองรับหรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>Bacomind™ เป็นสารสกัดจากพรมมิเกรดพรีเมียม ใช้นวัตกรรมการสกัดแบบ Soft Extraction process ที่ได้รับสิทธิบัตรจากออสเตรเลีย ทำให้ได้สารสำคัญที่มีประสิทธิภาพสูงถึง 9 ชนิด มีงานวิจัยทางคลินิกรองรับประสิทธิภาพในการเพิ่มความสามารถในการเรียนรู้ การจดจำ และลดความเครียด</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">น้ำมันสาหร่าย (DHA) แตกต่างจากน้ำมันปลาอย่างไร และมีประโยชน์ต่อสมองอย่างไร?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>น้ำมันสาหร่ายเป็นแหล่งของ DHA ที่มาจากพืชโดยตรง ต่างจากน้ำมันปลาที่มาจากสัตว์ทะเล จึงเหมาะสำหรับผู้ที่แพ้อาหารทะเลหรือทานมังสวิรัติ/วีแกน DHA มีความสำคัญอย่างยิ่งต่อการพัฒนาและการทำงานของสมอง ช่วยบำรุงเซลล์สมองและสนับสนุนการทำงานของระบบประสาท</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">L-Tyrosine และ Green Tea Extract ช่วยเรื่องสมองและสมาธิอย่างไร?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>L-Tyrosine เป็นกรดอะมิโนที่ช่วยในการสร้างสารสื่อประสาทที่เกี่ยวข้องกับสมาธิและความตื่นตัว โดยเฉพาะในสถานการณ์ที่ต้องเผชิญความเครียด สารสกัดจากชาเขียวมีคาเฟอีนจากธรรมชาติ ซึ่งสามารถช่วยเพิ่มความตื่นตัวและอาจมีผลดีต่อการทำงานของสมองและหน่วยความจำ</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">ผลิตภัณฑ์นี้ปลอดภัยและมีผลข้างเคียงหรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>ผลิตภัณฑ์มีความปลอดภัยสูง อย่างไรก็ตาม ในบางกรณีของการศึกษา Bacopa monnieri อาจพบผลข้างเคียงเล็กน้อยเกี่ยวกับระบบทางเดินอาหาร เช่น คลื่นไส้ หรืออาการท้องไส้ปั่นป่วนได้ ควรปฏิบัติตามวิธีการรับประทานที่แนะนำอย่างเคร่งครัด</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">วิธีการเก็บรักษาผลิตภัณฑ์ Tilwell Baco Omega+ อย่างไร?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>ควรเก็บผลิตภัณฑ์ในที่แห้งและเย็น อุณหภูมิห้องไม่เกิน 30°C และหลีกเลี่ยงการโดนแสงแดดโดยตรงและความร้อนสูง เพื่อรักษาคุณภาพและประสิทธิภาพของสารอาหาร</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">มีข้อควรระวังในการเก็บรักษาผลิตภัณฑ์เพิ่มเติมหรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>ไม่ควรเก็บในตู้เย็นหรือที่ชื้นจัด และควรปิดฝาให้สนิททุกครั้งหลังใช้งาน เพื่อป้องกันความชื้นและอากาศเข้า ซึ่งอาจส่งผลต่อคุณภาพของสารอาหารได้</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">ผลิตภัณฑ์นี้มีส่วนผสมของสารก่อภูมิแพ้อื่นๆ หรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>ผลิตภัณฑ์นี้ได้รับการพัฒนาโดยเน้นส่วนประกอบที่มาจากพืชและกระบวนการผลิตที่ปราศจากส่วนผสมที่ก่อให้เกิดภูมิแพ้ เช่น กุ้ง ถั่ว ปลา หรือสัตว์ทะเล อย่างไรก็ตาม หากคุณมีอาการแพ้เฉพาะบุคคล ควรตรวจสอบส่วนประกอบทั้งหมดอย่างละเอียดก่อนรับประทาน</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">สามารถรับประทาน Tilwell Baco Omega+ ร่วมกับยาหรืออาหารเสริมอื่นๆ ได้หรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>โดยทั่วไปผลิตภัณฑ์เสริมอาหารสามารถรับประทานร่วมกับยาหรืออาหารเสริมอื่นๆ ได้ อย่างไรก็ตาม หากคุณกำลังรับประทานยาประจำตัว หรือมีโรคประจำตัวที่ต้องได้รับการดูแลเป็นพิเศษ ควรปรึกษาแพทย์หรือเภสัชกรก่อนเริ่มรับประทานผลิตภัณฑ์เสริมอาหารทุกชนิด เพื่อความปลอดภัยและประสิทธิภาพสูงสุด</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">ผู้ที่ตั้งครรภ์หรือให้นมบุตรสามารถรับประทาน Tilwell Baco Omega+ ได้หรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>สำหรับสตรีมีครรภ์หรืออยู่ในช่วงให้นมบุตร การรับประทานผลิตภัณฑ์เสริมอาหารใดๆ ควรอยู่ภายใต้คำแนะนำและการดูแลของแพทย์อย่างใกล้ชิดเสมอ เพื่อความปลอดภัยของทั้งคุณแม่และทารก</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Tilwell Baco Omega+ มีส่วนช่วยในการลดความเครียดหรือความวิตกกังวลหรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>สารสกัดจากพรมมิ (Bacomind™) มีงานวิจัยบางส่วนที่ชี้ให้เห็นถึงคุณสมบัติในการปรับตัว (adaptogenic) ซึ่งอาจช่วยในการจัดการกับความเครียดและลดความวิตกกังวลได้ นอกจากนี้ L-Tyrosine ยังมีบทบาทในการรักษาสมดุลของสารสื่อประสาทที่เกี่ยวข้องกับอารมณ์และการตอบสนองต่อความเครียด ซึ่งอาจช่วยให้รู้สึกผ่อนคลายและมีสมาธิที่ดีขึ้นภายใต้สถานการณ์ที่กดดัน</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">จำเป็นต้องรับประทาน Tilwell Baco Omega+ อย่างต่อเนื่องหรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>เพื่อให้ได้รับประโยชน์สูงสุดจากการบำรุงสมองและเซลล์ประสาทในระยะยาว การรับประทาน Tilwell Baco Omega+ อย่างต่อเนื่องตามคำแนะนำเป็นสิ่งสำคัญ สารอาหารหลายชนิดในผลิตภัณฑ์นี้ต้องการระยะเวลาในการสะสมและออกฤทธิ์อย่างเต็มที่ในร่างกาย เพื่อให้เห็นผลลัพธ์ที่ชัดเจนและยั่งยืนต่อการทำงานของสมอง สมาธิ และความจำ</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                    <div class="faq-question cursor-pointer p-5 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Tilwell Baco Omega+ มีส่วนช่วยในการนอนหลับหรือไม่?</h3>
+                        <span class="faq-arrow text-blue-600 text-2xl transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-slate-600">
+                        <p>Tilwell Baco Omega+ ไม่ได้ออกแบบมาเพื่อช่วยในการนอนหลับโดยตรง แต่มีส่วนประกอบบางอย่าง เช่น สารสกัดจากชาเขียวที่มีคาเฟอีนธรรมชาติ ซึ่งอาจเพิ่มความตื่นตัวได้หากรับประทานในปริมาณมากหรือใกล้เวลานอน อย่างไรก็ตาม Bacomind™ อาจมีผลช่วยลดความเครียด ซึ่งอาจส่งผลดีต่อคุณภาพการนอนหลับโดยอ้อมในบางราย แต่ไม่ถือเป็นผลิตภัณฑ์ช่วยนอนหลับหลัก</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center pt-10 border-t border-slate-200">
+            <h3 class="text-2xl font-bold text-slate-800">Tilwell Baco Omega+</h3>
+            <p class="text-slate-600 mt-2">ปริมาณที่แนะนำ: 2 แคปซูลต่อวัน</p>
+            <p class="text-xs text-slate-500 mt-6 max-w-2xl mx-auto">
+                ผลิตภัณฑ์นี้เป็นผลิตภัณฑ์เสริมอาหาร ไม่มีผลในการป้องกันหรือรักษาโรค ควรกินอาหารหลากหลายครบ 5 หมู่ในสัดส่วนที่เหมาะสมเป็นประจำ ข้อมูลในหน้านี้มีวัตถุประสงค์เพื่อให้ข้อมูลทางวิทยาศาสตร์เท่านั้น ไม่ได้มีไว้เพื่อทดแทนคำแนะนำทางการแพทย์
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const adhdData = {
+            labels: ['อาการกระสับกระส่าย', 'การควบคุมตนเอง', 'การขาดสมาธิ', 'ปัญหาการเรียนรู้', 'ความหุนหันพลันแล่น'],
+            datasets: [{
+                label: '% ของเด็กที่อาการดีขึ้น',
+                data: [93, 89, 85, 78, 67],
+                backgroundColor: ['#1e40af', '#1d4ed8', '#2563eb', '#3b82f6', '#60a5fa'],
+                borderColor: '#f8fafc',
+                borderWidth: 2,
+                borderRadius: 4,
+            }]
+        };
+
+        const adhdConfig = {
+            type: 'bar',
+            data: adhdData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: '#e2e8f0' },
+                        ticks: {
+                            color: '#475569',
+                            font: { family: "'Kanit', sans-serif" },
+                            callback: value => value + '%'
+                        }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#334155', font: { family: "'Kanit', sans-serif", size: 14 } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1f2937',
+                        titleColor: '#f8fafc',
+                        bodyColor: '#f8fafc',
+                        titleFont: { family: "'Kanit', sans-serif" },
+                        bodyFont: { family: "'Kanit', sans-serif" },
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: context => ` มีอาการดีขึ้น: ${context.raw}%`
+                        }
+                    }
+                }
+            }
+        };
+
+        const dhaData = {
+            labels: ['DHA', 'โอเมก้า-3 ชนิดอื่นๆ ในสมอง'],
+            datasets: [{
+                data: [90, 10],
+                backgroundColor: ['#166534', '#dcfce7'],
+                borderColor: '#f8fafc',
+                borderWidth: 4,
+                hoverOffset: 8
+            }]
+        };
+
+        const dhaConfig = {
+            type: 'doughnut',
+            data: dhaData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#475569', font: { family: "'Kanit', sans-serif", size: 14 } }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1f2937',
+                        titleColor: '#f8fafc',
+                        bodyColor: '#f8fafc',
+                        titleFont: { family: "'Kanit', sans-serif" },
+                        bodyFont: { family: "'Kanit', sans-serif" },
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: context => ` ${context.label}: ${context.raw}%`
+                        }
+                    }
+                }
+            }
+        };
+
+        window.onload = function() {
+            const adhdCtx = document.getElementById('adhdChart')?.getContext('2d');
+            if(adhdCtx) new Chart(adhdCtx, adhdConfig);
+
+            const dhaCtx = document.getElementById('dhaDonutChart')?.getContext('2d');
+            if(dhaCtx) new Chart(dhaCtx, dhaConfig);
+            
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const currentlyActive = document.querySelector('.faq-item.active');
+                    if (currentlyActive && currentlyActive !== item) {
+                        currentlyActive.classList.remove('active');
+                    }
+                    item.classList.toggle('active');
+                });
+            });
+        };
+    </script>
+</body>
+</html>
