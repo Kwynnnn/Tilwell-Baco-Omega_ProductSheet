@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Construction: centre x=256. Head circle cy=210 r=130 (y 80..340).
+       Eye line y=225, eyes at x=256±52. Body ellipse top y=320 overlaps head.
+       Ears mirrored with <use>. Palette: #F2A93B base, #D98A1F shadow,
+       #FFF3DC belly, #2B2B2B ink, #FF8FA3 cheeks. -->
+  <defs>
+    <g id="ear-left">
+      <path d="M150 140 L132 46 L222 98 Z" fill="#F2A93B"/>
+      <path d="M160 125 L148 70 L202 101 Z" fill="#FF8FA3"/>
+    </g>
+    <ellipse id="eye-left" cx="204" cy="225" rx="17" ry="21" fill="#2B2B2B"/>
+    <clipPath id="clip-head"><circle cx="256" cy="210" r="130"/></clipPath>
+  </defs>
+  <g id="body">
+    <ellipse cx="256" cy="410" rx="118" ry="88" fill="#F2A93B"/>
+    <ellipse cx="256" cy="425" rx="70" ry="58" fill="#FFF3DC"/>
+  </g>
+  <g id="ears">
+    <use href="#ear-left"/>
+    <use href="#ear-left" transform="translate(512,0) scale(-1,1)"/>
+  </g>
+  <g id="head">
+    <circle cx="256" cy="210" r="130" fill="#F2A93B"/>
+    <!-- shadow: a circle shifted down-right, clipped to the head so it never spills -->
+    <circle cx="280" cy="250" r="130" fill="#D98A1F" opacity="0.3" clip-path="url(#clip-head)"/>
+    <circle cx="256" cy="198" r="130" fill="#F2A93B" clip-path="url(#clip-head)"/>
+    <ellipse cx="256" cy="275" rx="62" ry="44" fill="#FFF3DC"/>
+  </g>
+  <g id="face">
+    <use href="#eye-left"/>
+    <use href="#eye-left" transform="translate(512,0) scale(-1,1)"/>
+    <!-- highlights NOT mirrored: light comes from one side for both eyes -->
+    <circle cx="210" cy="217" r="6" fill="#FFFFFF"/>
+    <circle cx="314" cy="217" r="6" fill="#FFFFFF"/>
+    <ellipse cx="256" cy="258" rx="13" ry="9" fill="#2B2B2B"/>
+    <path d="M256 267 Q256 284 238 286 M256 267 Q256 284 274 286" fill="none" stroke="#2B2B2B" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="170" cy="262" rx="18" ry="11" fill="#FF8FA3" opacity="0.8"/>
+    <ellipse cx="342" cy="262" rx="18" ry="11" fill="#FF8FA3" opacity="0.8"/>
+  </g>
+</svg>
