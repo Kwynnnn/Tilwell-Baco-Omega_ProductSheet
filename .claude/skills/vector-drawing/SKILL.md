@@ -10,11 +10,26 @@ Hand-written SVG coordinates drift; the fix is to render, look, measure, fix —
 
 ## Setup (once per session)
 
+This skill can be installed in different places (a project's `.claude/skills/`,
+`~/.claude/skills/`, or uploaded to claude.ai, e.g. `/mnt/skills/user/`).
+Set `D` to the folder that contains this SKILL.md, then:
+
 ```bash
-pip install -r .claude/skills/vector-drawing/requirements.txt
+D=/path/to/vector-drawing          # the directory holding this SKILL.md
+S=$D/scripts
+pip install -r $D/requirements.txt  # add --break-system-packages if pip refuses
 ```
 
-Scripts live in `.claude/skills/vector-drawing/scripts/` (call them as `S=.claude/skills/vector-drawing/scripts`).
+If `pip install` fails (no network in the sandbox):
+- **Rendering**: use any available SVG renderer instead of `render.py`:
+  `rsvg-convert -w 800 in.svg -o out.png`, `magick in.svg out.png`,
+  `inkscape in.svg -o out.png`, or a headless Chromium screenshot. `lint_svg.py`
+  needs only the Python standard library and always works.
+- **Tracing**: `trace.py` needs vtracer. Without it, try `potrace` if installed
+  (lineart only: convert to PBM with Pillow first). Otherwise tell the user
+  tracing is unavailable here and offer Route B (hand-draw over the reference).
+- Never skip the visual check: if nothing can render, show the SVG to the user
+  (e.g. as an inline artifact) and ask them to confirm it before calling it done.
 
 | Script | What it does |
 |---|---|
